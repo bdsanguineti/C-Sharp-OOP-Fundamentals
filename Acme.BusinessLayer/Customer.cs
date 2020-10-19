@@ -16,7 +16,7 @@ namespace Acme.BusinessLayer
         {
             get
             {
-                return LastName + "," + FirstName;
+                return LastName + ", " + FirstName;
             }
         }          
     }
