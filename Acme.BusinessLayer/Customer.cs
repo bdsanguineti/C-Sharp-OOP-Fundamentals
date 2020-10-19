@@ -13,7 +13,6 @@ namespace Acme.BusinessLayer
         // A instance of the object without the parameter.
         public Customer() // 
         {
-            
         }
         public Customer(int customerId) // Snipped ctor tabtab
         {
@@ -55,23 +54,11 @@ namespace Acme.BusinessLayer
             return isValid;
         }
 
-        public Customer Retrieve(int CustomerId)
-        {
-            // Code that retrives the defined customer
-            return new Customer();
-        }
-
         // Retrieve all the customers
         public List<Customer> Retrieve()
         {
             // Code that retrieves all of the Customers
             return new List<Customer>();
-        }
-
-        public bool Save()
-        {
-            // Code that save the defined customer
-            return true;
         }
     }
 }
