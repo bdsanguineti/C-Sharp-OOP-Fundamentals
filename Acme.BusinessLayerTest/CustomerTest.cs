@@ -24,8 +24,62 @@ namespace Acme.BusinessLayerTest
 
             // -- Assert
             Assert.AreEqual(expected, actual);
-
-
         }
+        [TestMethod]
+        public void FullNameFirstNameEmpty()
+        {
+            // -- Arrange
+            Customer customer = new Customer
+            {
+                LastName = "Bell"
+            };
+
+            string expected = "Bell";
+
+            // -- Act
+            string actual = customer.FullName;
+
+            // -- Assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void FullNameLastNameEmpty()
+        {
+            // -- Arrange
+            Customer customer = new Customer
+            {
+                FirstName = "Kenny"
+            };
+
+            string expected = "Kenny";
+
+            // -- Act
+            string actual = customer.FullName;
+
+            // -- Assert
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void StaticTest()
+        {
+            // -- Arrange
+            var c1 = new Customer();
+            c1.FirstName = "Kenny";
+            Customer.InstanceCount++;
+
+            var c2 = new Customer();
+            c1.FirstName = "Julio";
+            Customer.InstanceCount++;
+
+            var c3 = new Customer();
+            c1.FirstName = "Jackie";
+            Customer.InstanceCount++;
+
+            // -- Act
+
+            // -- Assert
+            Assert.AreEqual(3, Customer.InstanceCount);
+        }
+
     }
 }

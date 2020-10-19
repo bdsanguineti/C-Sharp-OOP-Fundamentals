@@ -16,8 +16,21 @@ namespace Acme.BusinessLayer
         {
             get
             {
-                return LastName + ", " + FirstName;
+                string fullName = LastName;
+                if (!string.IsNullOrWhiteSpace(FirstName))
+                {
+                    if(!string.IsNullOrWhiteSpace(fullName))
+                    {
+                        fullName += ", ";
+                    }
+                    fullName += FirstName
+                }
+                return fullName;
             }
-        }          
+        }
+        
+        // Use the Static Modifier to declare members that belong to the class itself
+        // And not to an instance of that class.
+        public static int InstanceCount { get; set; }
     }
 }
