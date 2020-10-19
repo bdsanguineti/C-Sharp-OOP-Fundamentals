@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Acme.BusinessLayer
 {
-    class Customer
+    public class Customer
     {
         public int CustomerId { get; private set; } // 2- propg tab tab shortkey.
         public string EmailAddress  { get; set; } // 1- Insert Prop Snippet ctrl+k, ctrl x
@@ -18,9 +18,6 @@ namespace Acme.BusinessLayer
             {
                 return LastName + "," + FirstName;
             }
-        }
-            
-            
-
+        }          
     }
 }
