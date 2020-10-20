@@ -23,7 +23,15 @@ namespace Acme.BusinessLayerTest
             var actual = customerRepository.Retrieve(1);
 
             // Assert
-            Assert.AreEqual(expected, actual);
+            // This will fail because to objects AreEquals if are pointed at the same instance.
+            // Assert.AreEqual(expected, actual); 
+
+            // For Fix that I can compare Field by Field
+            Assert.AreEqual(expected.CustomerId, actual.CustomerId);
+            Assert.AreEqual(expected.EmailAddress, actual.EmailAddress);
+            Assert.AreEqual(expected.FirstName, actual.FirstName);
+            Assert.AreEqual(expected.LastName, actual.LastName);
+
         }
     }
 }
