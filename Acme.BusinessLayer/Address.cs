@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Acme.BusinessLayer
 {
-    class Address
+    public class Address
     {
         public Address()
         {

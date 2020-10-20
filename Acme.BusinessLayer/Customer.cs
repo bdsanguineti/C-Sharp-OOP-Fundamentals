@@ -11,13 +11,18 @@ namespace Acme.BusinessLayer
         // Two constructors with the same name and differents parammeters (overloading the constructor)
         // We need to define the default constructor as well, otherwise we wont be able to create
         // A instance of the object without the parameter.
-        public Customer() // 
+        public Customer(): this(0) // Constructor Chaining
         {
         }
         public Customer(int customerId) // Snipped ctor tabtab
         {
             CustomerId = CustomerId;
+            AddressList = new List<Address>(); // Prevent Null Exception
         }
+
+        // Adding Composition References
+        public List<Address> AddressList { get; set; }
+
         public int CustomerId { get; private set; } // 2- propg tab tab shortkey.
         public string EmailAddress  { get; set; } // 1- Insert Prop Snippet ctrl+k, ctrl x
         public string FirstName {get; set;} // Auto Implemented Property.
