@@ -21,6 +21,8 @@ namespace Acme.BusinessLayer
         public int ProductId { get; set; }
         public string ProductName { get; set; }
 
+        public override string ToString() => ProductName;
+
         // Retrieve one Product
         public Product Retrieve(int productId)
         {

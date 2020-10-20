@@ -19,12 +19,14 @@ namespace Acme.BusinessLayer
             CustomerId = CustomerId;
             AddressList = new List<Address>(); // Prevent Null Exception
         }
-
         // Adding Composition References
         public List<Address> AddressList { get; set; }
 
-        public int CustomerId { get; private set; } // 2- propg tab tab shortkey.
-        public string EmailAddress  { get; set; } // 1- Insert Prop Snippet ctrl+k, ctrl x
+        public int CustomerId { get; private set; }
+
+        // Adding Inheritance
+        public int CustomerType{ get; set; }
+        public string EmailAddress  { get; set; } 
         public string FirstName {get; set;} // Auto Implemented Property.
         public string LastName { get; set; }
         public string FullName
