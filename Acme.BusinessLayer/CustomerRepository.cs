@@ -8,6 +8,11 @@ namespace Acme.BusinessLayer
 {
     public class CustomerRepository
     {
+        public CustomerRepository()
+        {
+            addressRepository = new AddressRepository();
+        }
+        private AddressRepository addressRepository { get; set; }
         // Retrive one customer.
         public Customer Retrieve(int customerId)
         {
@@ -19,6 +24,7 @@ namespace Acme.BusinessLayer
                 customer.EmailAddress = "kennybell@gmail.com";
                 customer.FirstName = "Kenny";
                 customer.LastName = "Bell";
+                customer.AddressList = addressRepository.RetrieveByCustomerId(customerId).ToList();
             }
             return customer;
         }
