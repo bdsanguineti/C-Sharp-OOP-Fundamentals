@@ -36,6 +36,7 @@ namespace Acme.BusinessLayer
         public bool Validate()
         {
             var isValid = true;
+
             if (string.IsNullOrWhiteSpace(ProductName)) isValid = false;
             if (CurrentPrice == null) isValid = false;
 
