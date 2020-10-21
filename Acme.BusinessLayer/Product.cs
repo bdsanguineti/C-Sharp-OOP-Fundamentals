@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Acme.BusinessLayerTest;
 
 namespace Acme.BusinessLayer
 {
-    public class Product
+    public class Product : EntityBase
     {
         public Product()
         {
@@ -35,7 +36,7 @@ namespace Acme.BusinessLayer
             return true;
         }
 
-        public bool Validate()
+        public override bool Validate()
         {
             var isValid = true;
 
